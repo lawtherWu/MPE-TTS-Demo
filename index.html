@@ -25,17 +25,18 @@
       <p>Text-to-Speech (TTS) system based on deep learning has witnessed significant progress. The naturalness and similarity of speech synthesized by the general TTS systems are close to human speech. Research on zero-shot TTS has become a more challenging speech generation task, but current models lack flexible control over emotional information. This paper proposes a controllable emotional TTS Zero-Shot  system based on multi-modal prompt, MPE-TTS, which allows prompts of both natural language description and reference speech to control the emotion of synthesized speech. Firstly, we introduce the pretrained Emotion2Vec as the emotion feature extractor and construct a multi-modal emotion dataset for training. Then,we propose a multi-modal emotion encoder to extract the emotion information from the prompts. Finally, we introduce a prosody predictor module based on an autoregressive transformer to predict the prosody and use a diffusion-based acoustic model to synthesize speech. The subjective and objective experiments show that the proposed model achieves flexible emotional control while ensuring the naturalness of synthesized speech, expanding the application scenarios of TTS systems. Besides, this method can be easily extended to other TTS systems.</p>
       
 
-      <h2 id="speech-based-emotion-control">Reference Speech Speech based Style Transfer</h2>
+      <h2 id="speech-based-emotion-control">Emotion Control Based On Speech Prompt</h2>
       <table>
         <thead>
           <tr>
-            <th><center> Reference Speech </center></th>
+            <th><center> Speech Prompt </center></th>
             <th><center> Text </center></th>
-            <th><center> 1 </center></th>
-            <th><center> 2 </center></th>
-            <th><center> 3 </center></th>
-            <th><center> 4 </center></th>
-            <th><center> 5 </center></th>
+            <th><center> GenerSpeech </center></th>
+            <th><center> Meta-StyleSpeech </center></th>
+            <th><center> MM-TTS </center></th>
+            <th><center> Ours w/o MPEE </center></th>
+            <th><center> Ours w/o ECL </center></th>
+            <th><center> Ours </center></th>
           </tr>
         </thead>
         <tbody>
@@ -78,15 +79,16 @@
         </tbody>
       </table>
 
-      <h2 id="image-based-emotion-control">Face based Style Transfer</h2>
+      <h2 id="image-based-emotion-control">Emotion Control Based On Image Prompt</h2>
 
       <table>
         <thead>
           <tr>
-            <th><center> Reference Image </center></th>
-            <th><center> Text </center></th>
-            <th><center> 1 </center></th>
-            <th><center> 2 </center></th>
+            <th><center> Image Prompt </center></th>
+            <th><center> MM-TTS </center></th>
+            <th><center> Ours w/o MPEE </center></th>
+            <th><center> Ours w/o ECL </center></th>
+            <th><center> Ours </center></th>
           </tr>
         </thead>
         <tbody>
@@ -95,49 +97,63 @@
             <td>In many of his poems death comes by train a strongly evocative visual image.</td>
             <td><audio src="MM-TTS/Face/mead/mmss/face_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Face/mead/mmtts/face_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td><img src="/MM-TTS/Face/mead/face_M003_happy_level_3_017.jpg" alt="" /></td>
             <td>His artistic accomplishments guaranteed him entry into any social gathering.</td>
             <td><audio src="MM-TTS/Face/mead/mmss/face_M003_happy_level_3_017.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Face/mead/mmtts/face_M003_happy_level_3_017.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td><img src="/MM-TTS/Face/mead/face_M005_sad_level_1_001.jpg" alt="" /></td>
             <td>She had your dark suit in greasy wash water all year.</td>
             <td><audio src="MM-TTS/Face/mead/mmss/face_M005_sad_level_1_001.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Face/mead/mmtts/face_M005_sad_level_1_001.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td><img src="/MM-TTS/Face/mead/face_M007_disgusted_level_2_010.jpg" alt="" /></td>
             <td>Barb burned paper and leaves in a big bonfire.</td>
             <td><audio src="MM-TTS/Face/mead/mmss/face_M007_disgusted_level_2_010.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Face/mead/mmtts/face_M007_disgusted_level_2_010.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td><img src="/MM-TTS/Face/mead/face_W018_surprised_level_2_003.jpg" alt="" /></td>
             <td>Will you tell me why.</td>
             <td><audio src="MM-TTS/Face/mead/mmss/face_W018_surprised_level_2_003.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Face/mead/mmtts/face_W018_surprised_level_2_003.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td><img src="/MM-TTS/Face/mead/face_W021_fear_level_2_009.jpg" alt="" /></td>
             <td>Destroy every file related to my audits.</td>
             <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmss/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Face/mead/mmtts/face_W021_fear_level_2_009.wav" controls="" preload=""></audio></td>
           </tr>
         </tbody>
       </table>
 
-      <h2 id="text-based-emotion-control">Text Description based Style Transfer</h2>
+      <h2 id="text-based-emotion-control">Emotion Control Based On Text Prompt</h2>
 
       <table>
         <thead>
           <tr>
-            <th><center> Text Descriptions </center></th>
+            <th><center> Text Prompt </center></th>
             <th><center> Text </center></th>
-            <th><center> 1 </center></th>
-            <th><center> 2 </center></th>
+            <th><center> MM-TTS </center></th>
+            <th><center> Ours w/o MPEE </center></th>
+            <th><center> Ours w/o ECL </center></th>
+            <th><center> Ours </center></th>
           </tr>
         </thead>
         <tbody>
@@ -146,90 +162,40 @@
             <td>Its yellow bristles, rather a mane than a head of hair, covered and concealed a lofty brow, evidently made to contain thought.</td>
             <td><audio src="MM-TTS/Text/mmss/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Text/mmtts/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmss/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmtts/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td>There’s an intense happiness in the man’s tone.</td>
             <td>When he looked over his shoulder she was lacing her boots</td>
             <td><audio src="MM-TTS/Text/mmss/text_M003_happy_level_3_017.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Text/mmtts/text_M003_happy_level_3_017.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmss/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmtts/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td>A man says with a slightly surprised tone</td>
             <td>I, whom the Kshatriyas know as Kerim Shah, a prince from Iranistan, am no greater a masquerader than most men.</td>
             <td><audio src="MM-TTS/Text/mmss/text_M003_surprised_level_1_026.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Text/mmtts/text_M003_surprised_level_1_026.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmss/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmtts/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td>There’s an intense terror in the man’s tone.</td>
             <td>“Why don’t you move the pony?</td>
             <td><audio src="MM-TTS/Text/mmss/text_M005_fear_level_3_024.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Text/mmtts/text_M005_fear_level_3_024.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmss/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmtts/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
             <td>A man says with a slightly angry tone.</td>
             <td>“My name is Phoebe Pyncheon,” said the girl, with a manner of some reserve; for she was aware that her new acquaintance could be no other than the daguerreotypist, of whose lawless propensities the old maid had given her a disagreeable idea.</td>
             <td><audio src="MM-TTS/Text/mmss/text_M007_angry_level_1_024.wav" controls="" preload=""></audio></td>
             <td><audio src="MM-TTS/Text/mmtts/text_M007_angry_level_1_024.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>The man’s voice is filled with an overwhelming sense of disgust.</td>
-            <td>Truly from this time forward shall my words Be naked, so far as it is befitting To lay them open unto thy rude gaze.”</td>
-            <td><audio src="MM-TTS/Text/mmss/text_M022_disgusted_level_3_006.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_M022_disgusted_level_3_006.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>A man says with a moderately sad tone.</td>
-            <td>The patience of the meek Theodosius was provoked; and he dissolved in anger this episcopal tumult, which at the distance of thirteen centuries assumes the venerable aspect of the third oecumenical council.</td>
-            <td><audio src="MM-TTS/Text/mmss/text_M022_sad_level_2_029.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_M022_sad_level_2_029.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>There’s an intense disdain in the man’s tone.</td>
-            <td>Would he be justified in alluding to the report which associated Bennydeck with Catherine?</td>
-            <td><audio src="MM-TTS/Text/mmss/text_M025_contempt_level_3_028.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_M025_contempt_level_3_028.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>A woman says with an extremely disgusted tone.</td>
-            <td>The camp fire was burning brightly when the first guard, having completed its tour of duty, came galloping in.</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W023_disgusted_level_3_003.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W023_disgusted_level_3_003.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>A woman speaks with a tone of extreme surprise.</td>
-            <td>Nature had been prodigal of her kindness to Gwynplaine.</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W023_surprised_level_3_003.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W023_surprised_level_3_003.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>The woman’s tone carries a measured level of fear.</td>
-            <td>When she coaxed and insisted, I repulsed her quite sternly.</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W024_fear_level_2_037.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W024_fear_level_2_037.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>A woman speaks with a tone of extreme sadness.</td>
-            <td>To teach Cosette to read, and to let her play, this constituted nearly the whole of Jean Valjean’s existence.</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W024_sad_level_3_013.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W024_sad_level_3_013.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>Her tone reflects a tempered but still angry expression.</td>
-            <td>What an instrument is the human voice!</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W025_angry_level_2_024.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W025_angry_level_2_024.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>The woman’s tone is filled with an overwhelming feeling of disdain.</td>
-            <td>“What could be worse, Madam?” cried Miss Milner; “am not I disappointed of the ball?”</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W026_contempt_level_3_051.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W026_contempt_level_3_051.wav" controls="" preload=""></audio></td>
-          </tr>
-          <tr>
-            <td>A woman says with a moderately happy tone.</td>
-            <td>I had orders to allow no one to pass.</td>
-            <td><audio src="MM-TTS/Text/mmss/text_W035_happy_level_2_027.wav" controls="" preload=""></audio></td>
-            <td><audio src="MM-TTS/Text/mmtts/text_W035_happy_level_2_027.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmss/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
+            <td><audio src="MM-TTS/Text/mmtts/text_M003_angry_level_3_019.wav" controls="" preload=""></audio></td>
           </tr>
         </tbody>
       </table>

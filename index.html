@@ -25,7 +25,7 @@
       <p>Text-to-Speech (TTS) system based on deep learning has witnessed significant progress. The naturalness and similarity of speech synthesized by the general TTS systems are close to human speech. Controllable zero-shot TTS has become a more challenging speech generation task, but current systems lack flexible control over emotional information. This paper proposes a controllable emotional Zero-Shot TTS system based on multi-modal prompt. The system use the text, image and speech prompt to control the emotion of generated speech  and modeling the content, prosody and timbre separately. Firstly, we propose a multi-modal prompt emotion encoder based on the pretrained Emotion2Vec to extract the emotion information from the prompts. Then, we introduce a prosody predictor based on autoregressive transformer to predict the prosody and use the emotion consistency loss to retain emotional information in the predicted prosody. Finally, we introduce the diffusion-base acoustic model to generated target mel-spectrum. The subjective and objective experiments show that our method outperforms similar models in naturalness and similarity, and achieves more flexible emotion control.</p>
       
 
-      <h2 id="speech-based-emotion-control">Emotion Control Based On Speech Prompt</h2>
+      <h2 id="speech-based-emotion-control">Emotion Controlling Based On Speech Prompt</h2>
       <h4 id="note">( Note that: in the 'Ours w/o MPEE', we replaced the proposed MPEE  with the AMPE of MM-TTS.) </h4>
       <table>
         <thead>
@@ -84,7 +84,7 @@
         </tbody>
       </table>
 
-      <h2 id="image-based-emotion-control">Emotion Control Based On Image Prompt</h2>
+      <h2 id="image-based-emotion-control">Emotion Controlling Based On Image Prompt</h2>
 
       <table>
         <thead>
@@ -115,7 +115,7 @@
             <td><audio src="samples/image-based/1/Ours.wav" controls="" preload=""></audio></td>
           </tr>
           <tr>
-            <td><img src="samples/image-based/2/0.jpg" alt="" /></td>
+            <td><img src="samples/image-based/2/W018_contempt.jpg" alt="" /></td>
             <td>this was easy for us.</td>
             <td><audio src="samples/image-based/2/MMTTS.wav" controls="" preload=""></audio></td>
             <td><audio src="samples/image-based/2/Ours_wo_MPEE.wav" controls="" preload=""></audio></td>
@@ -134,7 +134,7 @@
         </tbody>
       </table>
 
-      <h2 id="text-based-emotion-control">Emotion Control Based On Text Prompt</h2>
+      <h2 id="text-based-emotion-control">Emotion Controlling Based On Text Prompt</h2>
 
       <table>
         <thead>
@@ -174,7 +174,7 @@
           </tr>
           <tr>
             <td>A man voices with a slight hint of annoyance.</td>
-            <td>“why do we need bigger and better bombs?</td>
+            <td>why do we need bigger and better bombs?</td>
             <td><audio src="samples/text-based/3/MMTTS.wav" controls="" preload=""></audio></td>
             <td><audio src="samples/text-based/3/Ours_wo_MPEE.wav" controls="" preload=""></audio></td>
             <td><audio src="samples/text-based/3/Ours_wo_ECL.wav" controls="" preload=""></audio></td>
